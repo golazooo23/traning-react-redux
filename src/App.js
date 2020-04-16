@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <h1>Hello World!!</h1>
-  );
+class App extends Component {
+  render() {
+    return (
+      <React.Fragment>
+        <label htmlFor="text">bar</label>
+        <input type="text" onClick={() =>{console.log("OK")}} />
+      </React.Fragment>
+    )
+  }
 }
 
 export default App;
