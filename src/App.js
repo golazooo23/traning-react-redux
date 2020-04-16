@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 // import logo from './logo.svg';
 import './App.css';
 
@@ -6,7 +7,7 @@ const App = () => {
   const profile = [
     { name: "Teshima", age:26},
     { name: "kengo", age:77},
-    {age:5}
+    { name: "1", age:28}
   ]
   return(
     <div>
@@ -23,8 +24,9 @@ const User = (props) => {
 return<div>Hi, I am {props.name} and {props.age} years old.</div>
 }
 
-User.defaultProps = {
-  name: "taro"
+User.propTypes = {
+  name: PropTypes.string,
+  age: PropTypes.number.isRequired
 }
 
 export default App;
