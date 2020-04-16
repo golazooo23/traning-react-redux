@@ -2,15 +2,29 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <label htmlFor="text">bar</label>
-        <input type="text" onClick={() =>{console.log("OK")}} />
-      </React.Fragment>
-    )
-  }
+const App = () => {
+  const profile = [
+    { name: "Teshima", age:26},
+    { name: "kengo", age:77},
+    {age:5}
+  ]
+  return(
+    <div>
+      {
+        profile.map((profile, index) => {
+          return <User name={profile.name} age={profile.age} key={index} />
+        })
+      }
+    </div>
+  )
+}
+
+const User = (props) => {
+return<div>Hi, I am {props.name} and {props.age} years old.</div>
+}
+
+User.defaultProps = {
+  name: "taro"
 }
 
 export default App;
